@@ -1,0 +1,430 @@
+/* variavel para cores */
+:root {
+    --roxo:       #b89fd4;
+    --roxo-escuro:#8b6baa;
+    --rosa:       #f7c5d5;
+    --rosa-escuro:#e89ab5;
+    --sakura: #ec9c9d;
+    --gateway-smoke: #70494a;
+    --creme:      #fff8f0;
+    --amarelo:    #fef3c7;
+    --misty-rose:   #f2cfca;
+    --rosa-escurinho: #ca93a6;
+    --mistky-clarinho: #ffe0dcca;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--creme);
+}
+nav {
+    background-color: var(--mistky-clarinho);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 50px;
+}
+.logo img {
+    height: 60px;
+}
+.menu {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    flex-wrap: wrap;
+}
+.menu a {
+    color: var(--gateway-smoke);
+    font-weight: 500;
+}
+.menu a:hover {
+    color: var(--sakura);
+}
+.button {
+    align-items: center;
+    background-color: var(--misty-rose);
+    color: var(--gateway-smoke);
+    padding: 5px 30px;
+    font-size: 20px;
+    border: 1px solid var( --sakura);
+    border-radius: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button:hover {
+    background-color: var(--sakura);
+}
+.button img {
+    height: 20px;
+    
+}
+
+
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:60px 80px;
+}
+
+.hero-text{
+  max-width:400px;
+}
+
+.hero-text h1{
+  font-size:70px;
+  color:#6d3b7c;
+  margin:0;
+}
+
+.hero-text h2{
+  font-size:40px;
+  font-style:italic;
+  color:#8f5a9e;
+  margin:0;
+}
+
+.hero-text h3{
+  font-size:42px;
+  color:#6d3b7c;
+  margin-top:10px;
+}
+
+.hero-text p{
+  color:#6b5b68;
+  line-height:1.6;
+  margin:20px 0;
+}
+
+.hero-text button{
+  background:#c59be7;
+  color:white;
+  border:none;
+  padding:15px 35px;
+  border-radius:40px;
+  font-size:18px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.hero-text button:hover{
+  transform:scale(1.05);
+}
+
+/* IMAGEM */
+
+.cupcakesprato img{
+  width: 450px;
+}
+/* BENEFITS */
+
+.benefits{
+  background:white;
+  margin:40px;
+  border-radius:40px;
+  padding:40px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.benefit-card{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.benefit-card img{
+  width:50px;
+}
+
+.benefit-card h4{
+  margin:0;
+  color:#7c4a8c;
+}
+
+.benefit-card p{
+  margin-top:8px;
+  color:#666;
+  font-size:14px;
+}
+
+
+
+.cards {
+    size: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.card {
+  width: 230px;
+  background: white;
+  border-radius: 25px;
+  padding: 25px 15px;
+  text-align: center;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.card img {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+.card button {
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.promo-section{
+  padding:40px 80px;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+/* CARD */
+
+.promo-card{
+  background:#fff5ef;
+
+  border:2px solid #f3d6c9;
+  border-radius:40px;
+
+  padding:30px 40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* SEGUNDO CARD */
+
+.purple{
+  background:#fff6fd;
+  border-color:#ead5f2;
+}
+
+/* IMAGEM */
+
+.promo-image img{
+  width:220px;
+}
+
+/* TEXTO */
+
+.promo-content{
+  flex:1;
+}
+
+.promo-content h2{
+  font-size:42px;
+  line-height:1.2;
+  color:#a84f5f;
+  margin-bottom:20px;
+}
+
+.purple h2{
+  color:#8f5ba7;
+}
+
+.promo-content p{
+  font-size:20px;
+  line-height:1.7;
+  color:#6f5c5c;
+  margin-bottom:25px;
+}
+
+/* BOTÃO */
+
+.promo-content button{
+  background:#ffc4cf;
+  color:#9a4a58;
+
+  border:none;
+  border-radius:40px;
+
+  padding:16px 35px;
+
+  font-size:18px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.purple button{
+  background:#e4c6f6;
+  color:#7a4c92;
+}
+
+.promo-content button:hover{
+  transform:scale(1.05);
+}
+
+/* DECORAÇÃO LATERAL */
+
+.promo-side img{
+  width:180px;
+  opacity:.95;
+}
+
+
+footer {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 60px;
+    background-color: var(--mistky-clarinho);
+    text-align: center;
+}
+.footerLogo img {
+    height: 60px;
+}
+.footerLogo p {
+    font-size: 15px;
+    color: var(--gateway-smoke);
+}
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--gateway-smoke);
+}
+.footer-links h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.footer-links a {
+    color: var(--gateway-smoke);
+    text-decoration: none;
+    font-size: 15px;
+}
+.footer-links a:hover {
+    color: var(--sakura);
+}
+.social {
+    display: flex;
+    gap: 15px;
+    color: var(--gateway-smoke);
+}
+.social i {
+    background: #70494a63;
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social i:hover {
+    background: #70494a75;
+    color: var(--sakura);
+}
+
+
+
+@media (max-width: 900px) {
+    nav {
+        padding: 16px 24px;
+    }
+ 
+    .menu {
+        font-size: 16px;
+        gap: 20px;
+    }
+ 
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+ 
+    .footer-links {
+        text-align: center;
+        align-items: center;
+    }
+}
+ 
+/* Mobile */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+        gap: 12px;
+    }
+ 
+    .menu {
+        font-size: 15px;
+        gap: 14px;
+    }
+ 
+    .button {
+        font-size: 15px;
+        padding: 7px 22px;
+    }
+ 
+    .logo img {
+        height: 48px;
+    }
+ 
+    footer {
+        padding: 40px 16px;
+    }
+ 
+    .footerLogo img {
+        height: 48px;
+    }
+ 
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+ 
+    .footer-links {
+        align-items: center;
+        text-align: center;
+    }
+}
