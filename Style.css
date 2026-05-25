@@ -1,8 +1,8 @@
 :root {
     --PaleBlush: #fadad9;
     --SoftCoral: #e9abae;
-    --WarnPink: #e0959c;
-    --MutedRspberry: #d78289;
+    --WarmPink: #e0959c;
+    --MutedRaspberry: #d78289;
     --AntiqueRose: #ce6f79;
     --VintagePink: #c65c69;
     --creme: #fae9d7;
@@ -17,29 +17,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: var(--brancoCreme);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--AntiqueRose);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ===========================
+   NAV
+=========================== */
 nav {
     background-color: var(--PaleBlush);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 50px;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .logo img {
     height: 60px;
 }
 
-/* ✅ CORREÇÃO: list-style removido pois agora usamos <li> corretamente */
 .menu {
     font-size: 20px;
     display: flex;
     align-items: center;
     gap: 40px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     flex-wrap: wrap;
     list-style: none;
 }
@@ -48,11 +68,16 @@ nav {
     color: var(--gateway-smoke);
     font-weight: 500;
     text-decoration: none;
+    transition: color 0.3s;
 }
+
 .menu a:hover {
     color: var(--sakura);
 }
 
+/* ===========================
+   BOTÕES
+=========================== */
 .button {
     background-color: var(--misty-rose);
     color: var(--gateway-smoke);
@@ -60,19 +85,25 @@ nav {
     font-size: 20px;
     border: 1px solid var(--sakura);
     border-radius: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    display: flex;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
     gap: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition:
+        background-color 0.3s,
+        transform 0.3s;
 }
+
 .button:hover {
     transform: scale(1.05);
     background-color: var(--sakura);
 }
+
 .button img {
     height: 20px;
+    width: auto;
 }
 
 /* ===========================
@@ -83,65 +114,60 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 60px 80px;
+    gap: 40px;
+    flex-wrap: wrap;
 }
+
 .hero-text {
-    max-width: 350px;
+    flex: 1 1 320px;
+    max-width: 420px;
 }
+
 .hero-text h1 {
     font-size: 65px;
-    color: var(--MutedRspberry);
-    margin: 0;
+    color: var(--MutedRaspberry);
 }
+
 .hero-text h2 {
     font-size: 35px;
     font-style: italic;
-    color: var(--MutedRspberry);
-    margin: 0;
-}
-.hero-text h3 {
-    font-size: 40px;
-    color: var(--MutedRspberry);
-    margin-top: 10px;
-}
-.hero-text p {
-    color: var(--WarnPink);
-    line-height: 1;
-    margin: 20px;
+    color: var(--MutedRaspberry);
 }
 
-.hero-text button {
-    background-color: var(--misty-rose);
-    color: var(--gateway-smoke);
-    padding: 5px 30px;
-    font-size: 20px;
-    border: 1px solid var(--sakura);
-    border-radius: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    align-items: center;
+.hero-text h3 {
+    font-size: 40px;
+    color: var(--MutedRaspberry);
+    margin-top: 10px;
 }
-.button img {
-    height: 30px;
+
+.hero-text p {
+    color: var(--WarmPink);
+    line-height: 1.4;
+    margin: 20px 0;
 }
-.hero-text button:hover {
-    transform: scale(1.05);
-    background-color: var(--sakura);
+
+.cupcakesprato {
+    flex: 1 1 320px;
+    display: flex;
+    justify-content: center;
 }
 
 .cupcakesprato img {
-    width: 50vw;
-    margin-right:  5vw;
+    width: 100%;
+    max-width: 600px;
 }
 
-
-
+/* ===========================
+   BENEFÍCIOS
+=========================== */
 .beneficios {
     background: var(--PaleBlush);
-    margin: 8vw;
+    margin: 4vw 8vw;
     border-radius: 40px;
     padding: 40px;
-    display: flex;
-    justify-content: center;
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
 .benefit-card {
@@ -152,10 +178,12 @@ nav {
 
 .benefit-card img {
     width: 65px;
+    flex-shrink: 0;
 }
 
-.benefit-card h4 {
+.benefit-card h3 {
     color: var(--VintagePink);
+    font-size: 16px;
 }
 
 .benefit-card p {
@@ -167,7 +195,6 @@ nav {
 /* ===========================
    CARDS DE SABORES
 =========================== */
-/* ✅ CORREÇÃO: removido "size: 60px" que não é propriedade CSS válida */
 .cards {
     display: flex;
     justify-content: center;
@@ -183,23 +210,26 @@ nav {
     padding: 25px 15px;
     text-align: center;
     box-shadow: 0px 5px 12px rgba(28, 6, 6, 0.31);
-    position: relative;
     transition: transform 0.3s;
 }
+
 .card:hover {
     transform: translateY(-5px);
 }
+
 .card img {
     width: 150px;
-    margin-bottom: 10px;
+    margin: 0 auto 10px;
 }
-.card h2 {
+
+.card h3 {
     font-size: 20px;
     margin: 10px;
     color: var(--AntiqueRose);
     opacity: 0.9;
     font-weight: bold;
 }
+
 .card p {
     font-size: 13px;
     opacity: 0.8;
@@ -207,6 +237,7 @@ nav {
     font-weight: bold;
     color: var(--gateway-smoke);
 }
+
 .button-cards {
     border: 1px solid var(--sakura);
     padding: 8px 20px;
@@ -215,9 +246,11 @@ nav {
     font-weight: bold;
     background-color: var(--misty-rose);
     color: var(--gateway-smoke);
-    transition: background-color 0.3s;
-    border: 1px solid var(--sakura);
+    transition:
+        background-color 0.3s,
+        transform 0.3s;
 }
+
 .button-cards:hover {
     background-color: var(--sakura);
     transform: scale(1.05);
@@ -242,8 +275,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    position: relative;
-    overflow: hidden;
+    flex-wrap: wrap;
 }
 
 .purple {
@@ -251,7 +283,8 @@ nav {
     border-color: var(--SoftCoral);
 }
 
-.image-caixa img {
+.image-caixa img,
+.promo-side img {
     width: 250px;
 }
 
@@ -261,7 +294,7 @@ nav {
 }
 
 .promo-content {
-    flex: 1;
+    flex: 1 1 300px;
 }
 
 .promo-content h2 {
@@ -269,10 +302,6 @@ nav {
     line-height: 1.2;
     color: var(--AntiqueRose);
     margin-bottom: 20px;
-}
-
-.purple .promo-content h2 {
-    color: var(--AntiqueRose);
 }
 
 .promo-content p {
@@ -293,24 +322,24 @@ nav {
     cursor: pointer;
     transition: transform 0.3s;
 }
+
 .promo-content button:hover {
     transform: scale(1.05);
-}
-.promo-side img {
-    width: 250px;
 }
 
 /* ===========================
    FOOTER
 =========================== */
 footer {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     padding: 60px;
     background-color: var(--PaleBlush);
     text-align: center;
 }
+
 .footerLogo img {
     height: 110px;
+    margin: 0 auto;
 }
 
 .footer-container {
@@ -340,6 +369,7 @@ footer {
     color: var(--gateway-smoke);
     text-decoration: none;
     font-size: 15px;
+    transition: color 0.3s;
 }
 
 .footer-links a:hover {
@@ -352,8 +382,9 @@ footer {
     color: var(--gateway-smoke);
 }
 
-.social i {
+.social a {
     background: #70494a63;
+    color: var(--gateway-smoke);
     font-size: 20px;
     width: 40px;
     height: 40px;
@@ -362,133 +393,212 @@ footer {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
 }
 
-.social i:hover {
+.social a:hover {
     background: #70494a75;
     color: var(--sakura);
 }
 
 /* ===========================
+   RESPONSIVO — DESKTOP PEQUENO / TABLET GRANDE
+=========================== */
+@media (max-width: 1024px) {
+    nav {
+        padding: 16px 32px;
+    }
+
+    .hero {
+        padding: 40px 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 56px;
+    }
+
+    .hero-text h3 {
+        font-size: 36px;
+    }
+
+    .beneficios {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 4vw;
+        gap: 24px;
+    }
+
+    .cards {
+        padding: 30px 40px;
+    }
+
+    .promo-section {
+        padding: 30px 40px;
+    }
+
+    .promo-content h2 {
+        font-size: 34px;
+    }
+
+    .promo-content p {
+        font-size: 18px;
+    }
+}
+
+/* ===========================
    RESPONSIVO — TABLET
 =========================== */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     nav {
         padding: 16px 24px;
     }
+
     .menu {
         font-size: 16px;
         gap: 20px;
     }
-    /* ✅ MELHORIA: hero responsivo */
+
     .hero {
         flex-direction: column;
-        padding: 40px 30px;
         text-align: center;
+        padding: 40px 24px;
     }
+
     .hero-text {
         max-width: 100%;
     }
+
+    .hero-text p {
+        margin: 20px auto;
+    }
+
     .cupcakesprato img {
-        width: 300px;
-        margin-top: 30px;
+        max-width: 380px;
     }
-    /* ✅ MELHORIA: benefícios responsivos */
-    .beneficios {
-        grid-template-columns: repeat(2, 1fr);
-        margin: 20px;
-    }
-    /* ✅ MELHORIA: promo responsivo */
-    .promo-section {
-        padding: 20px 30px;
-    }
+
     .promo-card {
         flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
+        padding: 30px 24px;
     }
+
     .promo-content h2 {
         font-size: 28px;
     }
+
     .promo-content p {
         font-size: 16px;
     }
+
     .footer-container {
         justify-content: center;
         text-align: center;
     }
+
     .footer-links {
-        text-align: center;
         align-items: center;
+        text-align: center;
     }
 }
+
 /* ===========================
    RESPONSIVO — MOBILE
 =========================== */
 @media (max-width: 600px) {
     nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding: 16px 20px;
         gap: 12px;
     }
+
     .menu {
         font-size: 15px;
         gap: 14px;
+        justify-content: center;
     }
+
     .button {
         font-size: 15px;
         padding: 7px 22px;
     }
+
     .logo img {
         height: 48px;
     }
+
     .hero {
         padding: 30px 20px;
     }
+
     .hero-text h1 {
-        font-size: 48px;
+        font-size: 44px;
     }
+
     .hero-text h2 {
-        font-size: 26px;
+        font-size: 24px;
     }
+
     .hero-text h3 {
         font-size: 28px;
     }
+
     .cupcakesprato img {
-        width: 240px;
+        max-width: 260px;
     }
-    /* ✅ MELHORIA: benefícios em coluna no mobile */
+
     .beneficios {
         grid-template-columns: 1fr;
         margin: 16px;
         padding: 24px;
+        gap: 20px;
     }
+
     .cards {
         padding: 20px;
         gap: 20px;
     }
+
     .promo-section {
         padding: 20px 16px;
+        gap: 24px;
     }
-    .promo-image img {
-        width: 140px;
+
+    .promo-card {
+        padding: 24px 16px;
     }
+
+    .image-caixa img,
+    .imagem-gato img,
     .promo-side img {
-        width: 100px;
+        width: 200px;
     }
+
+    .promo-content h2 {
+        font-size: 24px;
+    }
+
+    .promo-content button {
+        padding: 12px 28px;
+        font-size: 16px;
+    }
+
     footer {
         padding: 40px 16px;
     }
+
     .footerLogo img {
-        height: 48px;
+        height: 64px;
     }
+
     .footer-container {
         flex-direction: column;
         align-items: center;
         gap: 28px;
     }
+
     .footer-links {
         align-items: center;
         text-align: center;

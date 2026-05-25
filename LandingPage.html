@@ -1,211 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css">
-    <link rel="icon" href="Art CupCat/LogoSemFundo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>CupCat</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="CupCat — cupcakes artesanais inspirados em raças de gato. Sabores únicos, embalagens especiais e encomendas para festas e momentos especiais."
+        />
+        <meta name="theme-color" content="#fadad9" />
 
-    <!-- ✅ CORREÇÃO: nav agora está dentro do body -->
-    <nav>
-        <div class="logo">
-            <img src="Art CupCat/LogoSemFundo.png" alt="Logo CupCat">
-        </div>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="CupCat — Cupcakes inspirados em raças de gato" />
+        <meta
+            property="og:description"
+            content="Sabores únicos, fofura garantida e muito amor em cada detalhe."
+        />
+        <meta property="og:image" content="Art CupCat/LogoSemFundo.png" />
 
-        <!-- ✅ CORREÇÃO: <a> agora estão dentro de <li>, dentro do <ul> -->
-        <ul class="menu">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sabores</a></li>
-            <li><a href="#">Contato</a></li>
-            <li><a href="#">Sobre nós</a></li>
-        </ul>
+        <link rel="stylesheet" href="Style.css" />
+        <link rel="icon" href="Art CupCat/LogoSemFundo.png" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <title>CupCat</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="Art CupCat/LogoSemFundo.png" alt="Logo CupCat" />
+                </div>
 
-        <button class="button">
-            <span>Peça Agora</span> 
-            <img src="Art CupCat/icons/iconcoracao.png" alt="Coração">
-        </button>
-    </nav>
+                <ul class="menu">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sabores</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
 
-    <!-- ✅ CORREÇÃO: Seções semânticas corretas -->
-    <main>
-
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero-text">
-                <h1>CUPCAKES</h1>
-                <h2>inspirados em</h2>
-                <h3>RAÇAS DE GATO</h3>
-                <p>
-                    Sabores únicos, fofura garantida
-                    e muito amor em cada detalhe.
-                </p>
                 <button class="button">
-                    <span>Ver sabores</span> 
-                    <img src="Art CupCat/icons/iconcoracao.png" alt="Coração">
+                    <span>Peça Agora</span>
+                    <img src="Art CupCat/icons/iconcoracao.png" alt="" />
                 </button>
-            </div>
+            </nav>
+        </header>
 
-            <div class="cupcakesprato">
-                <img src="Art CupCat/cupcakes/cupcakesJntos.png" alt="Prato de cupcakes">
-            </div>
-        </section>
-
-        <!-- BENEFÍCIOS -->
-        <!-- ✅ CORREÇÃO: classe "beneficios" alinhada com o CSS -->
-        <section class="beneficios">
-            <div class="benefit-card">
-                <img src="Art CupCat/icons/iconcupcake.png" alt="Cupcake">
-                <div>
-                    <h4>Encomendas personalizadas</h4>
-                    <p>Para festas, presentes e momentos especiais</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <img src="Art CupCat/icons/iconPata.png" alt="Patinha">
-                <div>
-                    <h4>Feito artesanalmente</h4>
-                    <p>Produzido com carinho do início ao fim</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <img src="Art CupCat/icons/iconcaixa.png" alt="Caixa presente">
-                <div>
-                    <!-- ✅ CORREÇÃO: conteúdo único para cada card -->
-                    <h4>Embalagem especial</h4>
-                    <p>Presenteie com uma caixinha linda e delicada</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <img src="Art CupCat/icons/iconcoracao.png" alt="Coração">
-                <div>
-                    <h4>Feito com amor</h4>
-                    <p>Cada detalhe pensado para encantar você</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SABORES -->
-        <section class="sabores">
-            <div class="cards">
-                <!-- ✅ CORREÇÃO: nome, alt e descrição únicos para cada card -->
-                <div class="card">
-                    <img src="Art CupCat/cupcakes/cupcatLaranja.png" alt="Cupcake Laranja">
-                    <h2>Laranja</h2>
-                    <p>Massa de laranja com recheio<br>de brigadeiro branco</p>
-                    <button class="button-cards">Conhecer</button>
-                </div>
-                <div class="card">
-                    <img src="Art CupCat/cupcakes/café.png" alt="Cupcake Café">
-                    <h2>Café</h2>
-                    <p>Massa de café com recheio<br>de creme de avelã</p>
-                    <button class="button-cards">Conhecer</button>
-                </div>
-                <div class="card">
-                    <img src="Art CupCat/cupcakes/chocvanilla.png" alt="Cupcake Choc Vanilla">
-                    <h2>Choc Vanilla</h2>
-                    <p>Massa de chocolate com recheio<br>de baunilha</p>
-                    <button class="button-cards">Conhecer</button>
-                </div>
-                <div class="card">
-                    <img src="Art CupCat/cupcakes/avela.png" alt="Cupcake Avelã">
-                    <h2>Avelã</h2>
-                    <p>Massa de avelã com recheio<br>de frutas vermelhas</p>
-                    <button class="button-cards">Conhecer</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROMO ENCOMENDAS -->
-        <section class="promo-section">
-
-            <div class="promo-card">
-                <div class="image-caixa">
-                    <img src="Art CupCat/cupcakes/cupcakeCaixa.png" alt="Caixa de presente">
-                </div>
-                <div class="promo-content">
-                    <h2>
-                        Presenteie com amor,
-                        presenteie com Cupcat
-                    </h2>
+        <main>
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>CUPCAKES</h1>
+                    <h2>inspirados em</h2>
+                    <h3>RAÇAS DE GATO</h3>
                     <p>
-                        Encomendas abertas para festas,
-                        eventos e momentos especiais.
+                        Sabores únicos, fofura garantida e muito amor em cada
+                        detalhe.
                     </p>
                     <button class="button">
-                        <span>Quero encomendar</span>
-                        <img src="Art CupCat/icons/iconcoracao.png" alt="Coração">
+                        <span>Ver sabores</span>
+                        <img src="Art CupCat/icons/iconcoracao.png" alt="" />
                     </button>
                 </div>
-                <div class="promo-side">
-                    <img src="Art CupCat/icons/seloEmbalagens.png" alt="Selo de embalagens especiais">
+
+                <div class="cupcakesprato">
+                    <img
+                        src="Art CupCat/cupcakes/cupcakesJntos.png"
+                        alt="Prato de cupcakes"
+                    />
+                </div>
+            </section>
+
+            <section class="beneficios">
+                <div class="benefit-card">
+                    <img
+                        src="Art CupCat/icons/iconcupcake.png"
+                        alt=""
+                        loading="lazy"
+                    />
+                    <div>
+                        <h3>Encomendas personalizadas</h3>
+                        <p>Para festas, presentes e momentos especiais</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <img
+                        src="Art CupCat/icons/iconPata.png"
+                        alt=""
+                        loading="lazy"
+                    />
+                    <div>
+                        <h3>Feito artesanalmente</h3>
+                        <p>Produzido com carinho do início ao fim</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <img
+                        src="Art CupCat/icons/iconcaixa.png"
+                        alt=""
+                        loading="lazy"
+                    />
+                    <div>
+                        <h3>Embalagem especial</h3>
+                        <p>Presenteie com uma caixinha linda e delicada</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <img
+                        src="Art CupCat/icons/iconcoracao.png"
+                        alt=""
+                        loading="lazy"
+                    />
+                    <div>
+                        <h3>Feito com amor</h3>
+                        <p>Cada detalhe pensado para encantar você</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sabores">
+                <div class="cards">
+                    <div class="card">
+                        <img
+                            src="Art CupCat/cupcakes/cupcatLaranja.png"
+                            alt="Cupcake Laranja"
+                            loading="lazy"
+                        />
+                        <h3>Laranja</h3>
+                        <p>
+                            Massa de laranja com recheio<br />de brigadeiro
+                            branco
+                        </p>
+                        <button class="button-cards">Conhecer</button>
+                    </div>
+
+                    <div class="card">
+                        <img
+                            src="Art CupCat/cupcakes/cafe.png"
+                            alt="Cupcake Café"
+                            loading="lazy"
+                        />
+                        <h3>Café</h3>
+                        <p>Massa de café com recheio<br />de creme de avelã</p>
+                        <button class="button-cards">Conhecer</button>
+                    </div>
+
+                    <div class="card">
+                        <img
+                            src="Art CupCat/cupcakes/chocvanilla.png"
+                            alt="Cupcake Choc Vanilla"
+                            loading="lazy"
+                        />
+                        <h3>Choc Vanilla</h3>
+                        <p>Massa de chocolate com recheio<br />de baunilha</p>
+                        <button class="button-cards">Conhecer</button>
+                    </div>
+
+                    <div class="card">
+                        <img
+                            src="Art CupCat/cupcakes/avela.png"
+                            alt="Cupcake Avelã"
+                            loading="lazy"
+                        />
+                        <h3>Avelã</h3>
+                        <p>
+                            Massa de avelã com recheio<br />de frutas vermelhas
+                        </p>
+                        <button class="button-cards">Conhecer</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="promo-section">
+                <div class="promo-card">
+                    <div class="image-caixa">
+                        <img
+                            src="Art CupCat/cupcakes/cupcakeCaixa.png"
+                            alt="Caixa de presente"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div class="promo-content">
+                        <h2>Presenteie com amor, presenteie com Cupcat</h2>
+                        <p>
+                            Encomendas abertas para festas, eventos e momentos
+                            especiais.
+                        </p>
+                        <button class="button">
+                            <span>Quero encomendar</span>
+                            <img
+                                src="Art CupCat/icons/iconcoracao.png"
+                                alt=""
+                            />
+                        </button>
+                    </div>
+                    <div class="promo-side">
+                        <img
+                            src="Art CupCat/icons/seloEmbalagens.png"
+                            alt="Selo de embalagens especiais"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+
+                <div class="promo-card purple">
+                    <div class="imagem-gato">
+                        <img
+                            src="Art CupCat/gatoCozinhando.png"
+                            alt="Confeiteira apaixonada"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div class="promo-content">
+                        <h2>Feito por apaixonados por gatos e confeitaria</h2>
+                        <p>
+                            A Cupcat nasceu do amor pelos gatos e da paixão por
+                            cupcakes. Aqui, cada detalhe é pensado para encantar
+                            você e quem você ama.
+                        </p>
+                        <button class="button">
+                            <span>Conheça nossa história</span>
+                            <img
+                                src="Art CupCat/icons/iconcoracao.png"
+                                alt=""
+                            />
+                        </button>
+                    </div>
+                    <div class="promo-side">
+                        <img
+                            src="Art CupCat/icons/iconNovelo.png"
+                            alt="Novelo de lã"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footerLogo">
+                    <img
+                        src="Art CupCat/LogoSemFundo.png"
+                        alt="Logo CupCat"
+                        loading="lazy"
+                    />
+                </div>
+
+                <div class="social">
+                    <a href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Navegação</h3>
+                    <a href="#">Início</a>
+                    <a href="#">Sabores</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Sobre nós</a>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Ajuda</h3>
+                    <a href="#">Perguntas frequentes</a>
+                    <a href="#">Políticas</a>
+                    <a href="#">Suporte</a>
+                    <a href="#">Prazo de entrega</a>
                 </div>
             </div>
-
-            <!-- ✅ CORREÇÃO: segundo card com classe correta -->
-            <div class="promo-card purple">
-                <div class="imagem-gato">
-                    <img src="Art CupCat/gatoCozinhando.png" alt="Confeiteira apaixonada">
-                </div>
-                <div class="promo-content">
-                    <h2>
-                        Feito por apaixonados
-                        por gatos e confeitaria
-                    </h2>
-                    <p>
-                        A Cupcat nasceu do amor pelos gatos e da paixão
-                        por cupcakes. Aqui, cada detalhe é pensado para
-                        encantar você e quem você ama.
-                    </p>
-                    <button class="button">
-                        <span>Conheça nossa história</span>
-                        <img src="Art CupCat/icons/iconcoracao.png" alt="Coração">
-                    </button>
-                </div>
-                <div class="promo-side">
-                    <img src="Art CupCat/icons/iconNovelo.png" alt="Novelo de lã">
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footerLogo">
-                <img src="Art CupCat/LogoSemFundo.png" alt="Logo CupCat">
-            </div>
-
-            <div class="social">
-                <i class="fa-brands fa-youtube" aria-label="YouTube"></i>
-                <i class="fa-brands fa-facebook-f" aria-label="Facebook"></i>
-                <i class="fa-brands fa-instagram" aria-label="Instagram"></i>
-                <i class="fa-brands fa-twitter" aria-label="Twitter"></i>
-            </div>
-
-            <div class="footer-links">
-                <h3>Navegação</h3>
-                <a href="#">Início</a>
-                <a href="#">Sabores</a>
-                <a href="#">Contato</a>
-                <a href="#">Sobre nós</a>
-            </div>
-
-            <div class="footer-links">
-                <h3>Ajuda</h3>
-                <a href="#">Perguntas frequentes</a>
-                <a href="#">Políticas</a>
-                <a href="#">Suporte</a>
-                <a href="#">Prazo de entrega</a>
-            </div>
-        </div>
-    </footer>
-
-</body>
+        </footer>
+    </body>
 </html>
