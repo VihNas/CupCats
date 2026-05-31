@@ -5,55 +5,58 @@
     --MutedRaspberry: #d78289;
     --AntiqueRose: #ce6f79;
     --VintagePink: #c65c69;
-    --creme: #fae9d7;
     --brancoCreme: #faf5ec;
     --gateway-smoke: #70494a;
-    --sakura: #ec9c9d;
+    --sakura: #f1b0b2;
     --misty-rose: #f2cfca;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background-color: var(--brancoCreme);
+    background-image:radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+    background-size: 22px 22px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: var(--gateway-smoke);
+    scroll-behavior: smooth;
+    line-height: 1.5;
 }
-
 img {
     max-width: 100%;
     height: auto;
 }
-
 :focus:not(:focus-visible) {
     outline: none;
 }
-
 :focus-visible {
     outline: 2px solid var(--AntiqueRose);
     outline-offset: 3px;
     border-radius: 4px;
 }
 
-/* ===========================
-   NAV
-=========================== */
+
+/*NAV*/
 nav {
-    background-color: var(--PaleBlush);
+    background: rgba(250, 218, 217, 0.82);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 50px;
     flex-wrap: wrap;
     gap: 16px;
+    box-shadow:0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
 }
-
 .logo img {
     height: 60px;
 }
-
 .menu {
     font-size: 20px;
     display: flex;
@@ -65,19 +68,30 @@ nav {
 }
 
 .menu a {
+    position: relative;
     color: var(--gateway-smoke);
     font-weight: 500;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
-
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: var(--sakura);
+    transition: width 0.3s ease;
+}
+.menu a:hover::after {
+    width: 100%;
+}
 .menu a:hover {
     color: var(--sakura);
 }
 
-/* ===========================
-   BOTÕES
-=========================== */
+/*BOTÕES*/
 .button {
     background-color: var(--misty-rose);
     color: var(--gateway-smoke);
@@ -91,24 +105,20 @@ nav {
     justify-content: center;
     gap: 8px;
     cursor: pointer;
-    transition:
-        background-color 0.3s,
-        transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow:0 6px 15px rgba(0, 0, 0, 0.05);
 }
-
 .button:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.05);
     background-color: var(--sakura);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
-
 .button img {
     height: 20px;
     width: auto;
 }
 
-/* ===========================
-   HERO
-=========================== */
+/*HERO*/
 .hero {
     display: flex;
     justify-content: space-between;
@@ -124,28 +134,29 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 65px;
+    font-family: "Great Vibes";
+    font-size: 75px;
     color: var(--MutedRaspberry);
 }
 
 .hero-text h2 {
-    font-size: 35px;
-    font-style: italic;
+    font-family: "Great Vibes", cursive;
+    font-size: 60px;
+    font-weight: normal;
     color: var(--MutedRaspberry);
-}
-
-.hero-text h3 {
-    font-size: 40px;
-    color: var(--MutedRaspberry);
-    margin-top: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(224, 149, 156, 0.25);
+    line-height: 1.1;
 }
 
 .hero-text p {
-    color: var(--WarmPink);
-    line-height: 1.4;
+    color: var(--gateway-smoke);
+    font-family: "Great Vibes", cursive;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    font-size: 23px;
     margin: 20px 0;
 }
-
 .cupcakesprato {
     flex: 1 1 320px;
     display: flex;
@@ -155,11 +166,14 @@ nav {
 .cupcakesprato img {
     width: 100%;
     max-width: 600px;
+    transition: transform 0.5s ease,filter 0.5s ease;
+}
+.cupcakesprato img:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 12px 20px rgba(119, 1, 82, 0.151));
 }
 
-/* ===========================
-   BENEFÍCIOS
-=========================== */
+/*BENEFÍCIOS */
 .beneficios {
     background: var(--PaleBlush);
     margin: 4vw 8vw;
@@ -167,34 +181,35 @@ nav {
     padding: 40px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 20px;
 }
-
-.benefit-card {
+.beneficios-card {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     align-items: flex-start;
 }
 
-.benefit-card img {
+.beneficios-card img {
     width: 65px;
-    flex-shrink: 0;
 }
 
-.benefit-card h3 {
+.beneficios-card h3 {
+    font-family: "Great Vibes";
+    letter-spacing: 1px;
     color: var(--VintagePink);
-    font-size: 16px;
+    font-size: 25px;
+    opacity: 0.9;
+    
 }
 
-.benefit-card p {
+.beneficios-card p {
     margin-top: 8px;
     color: var(--gateway-smoke);
     font-size: 14px;
+    opacity: 0.9;
 }
 
-/* ===========================
-   CARDS DE SABORES
-=========================== */
+/* CARDS DE SABORES*/
 .cards {
     display: flex;
     justify-content: center;
@@ -209,21 +224,29 @@ nav {
     border-radius: 25px;
     padding: 25px 15px;
     text-align: center;
-    box-shadow: 0px 5px 12px rgba(28, 6, 6, 0.31);
+    box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.03),
+    0 12px 30px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(119, 1, 82, 0.151)
 }
-
 .card img {
     width: 150px;
     margin: 0 auto 10px;
+    transition: transform 0.4s ease;
+}
+.card:hover img {
+    transform: scale(1.08);
 }
 
 .card h3 {
-    font-size: 20px;
+    font-family: "Great Vibes", cursive;
+    letter-spacing: 1px;
+    font-size: 30px;
     margin: 10px;
     color: var(--AntiqueRose);
     opacity: 0.9;
@@ -232,33 +255,14 @@ nav {
 
 .card p {
     font-size: 13px;
-    opacity: 0.8;
+    opacity: 0.7;
     margin-bottom: 15px;
     font-weight: bold;
     color: var(--gateway-smoke);
 }
 
-.button-cards {
-    border: 1px solid var(--sakura);
-    padding: 8px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: var(--misty-rose);
-    color: var(--gateway-smoke);
-    transition:
-        background-color 0.3s,
-        transform 0.3s;
-}
 
-.button-cards:hover {
-    background-color: var(--sakura);
-    transform: scale(1.05);
-}
-
-/* ===========================
-   SEÇÃO PROMO
-=========================== */
+/* SEÇÃO PROMO*/
 .promo-section {
     padding: 40px 80px;
     display: flex;
@@ -276,8 +280,13 @@ nav {
     justify-content: space-between;
     gap: 30px;
     flex-wrap: wrap;
+    box-shadow: 0 12px 20px rgba(119, 1, 82, 0.151);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(119, 1, 82, 0.151);
+}
 .purple {
     background: var(--PaleBlush);
     border-color: var(--SoftCoral);
@@ -295,6 +304,10 @@ nav {
 
 .promo-content {
     flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px; 
 }
 
 .promo-content h2 {
@@ -302,34 +315,17 @@ nav {
     line-height: 1.2;
     color: var(--AntiqueRose);
     margin-bottom: 20px;
+    font-family: "Great Vibes", cursive;
+    letter-spacing: 1px;
 }
 
 .promo-content p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
     color: var(--AntiqueRose);
-    margin-bottom: 25px;
 }
 
-.promo-content button {
-    background-color: var(--misty-rose);
-    color: var(--gateway-smoke);
-    border: 1px solid var(--sakura);
-    border-radius: 40px;
-    padding: 16px 35px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.promo-content button:hover {
-    transform: scale(1.05);
-}
-
-/* ===========================
-   FOOTER
-=========================== */
+/* FOOTER */
 footer {
     font-family: Georgia, "Times New Roman", Times, serif;
     padding: 60px;
@@ -351,7 +347,6 @@ footer {
     gap: 40px;
     flex-wrap: wrap;
 }
-
 .footer-links {
     display: flex;
     flex-direction: column;
@@ -401,56 +396,45 @@ footer {
 
 .social a:hover {
     background: #70494a75;
+
     color: var(--sakura);
+
+    transform:
+        translateY(-3px) scale(1.08);
 }
 
-/* ===========================
-   RESPONSIVO — DESKTOP PEQUENO / TABLET GRANDE
-=========================== */
+/* DESKTOP PEQUENO*/
 @media (max-width: 1024px) {
     nav {
         padding: 16px 32px;
     }
-
     .hero {
         padding: 40px 40px;
     }
-
     .hero-text h1 {
         font-size: 56px;
     }
-
-    .hero-text h3 {
-        font-size: 36px;
-    }
-
     .beneficios {
         grid-template-columns: repeat(2, 1fr);
         margin: 4vw;
         gap: 24px;
     }
-
     .cards {
         padding: 30px 40px;
     }
-
     .promo-section {
         padding: 30px 40px;
     }
-
     .promo-content h2 {
         font-size: 34px;
     }
-
     .promo-content p {
         font-size: 18px;
     }
 }
 
-/* ===========================
-   RESPONSIVO — TABLET
-=========================== */
-@media (max-width: 768px) {
+/* RESPONSIVO — TABLET*/
+@media (max-width: 900px) {
     nav {
         padding: 16px 24px;
     }
@@ -474,27 +458,56 @@ footer {
         margin: 20px auto;
     }
 
+    .cupcakesprato {
+        order: 2;
+        width: 100%;
+        height: auto;         
+        min-height: 280px;      
+    }
+
     .cupcakesprato img {
-        max-width: 380px;
+        width: auto;            
+        max-width: 100%;
+        height: 280px;        
+        object-fit: contain; 
+        display: block;
+        margin: 0 auto;
     }
 
     .promo-card {
         flex-direction: column;
+        align-items: center;
         text-align: center;
         padding: 30px 24px;
     }
-
+    .image-caixa img,
+    .imagem-gato img{
+        width: 180px;
+    }
+    .promo-side {
+        display: none;
+    }
     .promo-content h2 {
         font-size: 28px;
     }
 
+    .promo-content {
+        align-items: center;
+    }
     .promo-content p {
         font-size: 16px;
     }
 
     .footer-container {
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
         text-align: center;
+        gap: 28px;
+    }
+    .social {
+        justify-self: center;
+        align-self: center;
     }
 
     .footer-links {
@@ -503,9 +516,7 @@ footer {
     }
 }
 
-/* ===========================
-   RESPONSIVO — MOBILE
-=========================== */
+/* RESPONSIVO — MOBILE*/
 @media (max-width: 600px) {
     nav {
         flex-direction: column;
@@ -531,6 +542,7 @@ footer {
 
     .hero {
         padding: 30px 20px;
+        align-items: center;
     }
 
     .hero-text h1 {
@@ -541,14 +553,9 @@ footer {
         font-size: 24px;
     }
 
-    .hero-text h3 {
-        font-size: 28px;
+    .hero-text {
+        order: 1;
     }
-
-    .cupcakesprato img {
-        max-width: 260px;
-    }
-
     .beneficios {
         grid-template-columns: 1fr;
         margin: 16px;
@@ -565,42 +572,37 @@ footer {
         padding: 20px 16px;
         gap: 24px;
     }
-
     .promo-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         padding: 24px 16px;
     }
-
     .image-caixa img,
-    .imagem-gato img,
-    .promo-side img {
-        width: 200px;
+    .imagem-gato img {
+        width: 160px;
     }
 
+    .promo-side {
+        display: none;
+    }
     .promo-content h2 {
         font-size: 24px;
     }
-
+    .promo-content p {
+        margin-bottom: 20px; 
+    }
+    .promo-content {
+        align-items: center;
+    }
     .promo-content button {
         padding: 12px 28px;
         font-size: 16px;
     }
-
     footer {
         padding: 40px 16px;
     }
-
     .footerLogo img {
         height: 64px;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 28px;
-    }
-
-    .footer-links {
-        align-items: center;
-        text-align: center;
     }
 }
